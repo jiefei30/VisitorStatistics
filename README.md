@@ -1,11 +1,12 @@
 # VisitorStatistics
 typecho 博客插件——网站访客量统计
 # 使用方法
-- 代码clone下来之后，将文件夹直接放入`/usr/plugins`下
+- 代码clone下来之后，将VisitorStatistics文件夹直接放入`/usr/plugins`下
 - 进入typecho后台启用插件，在设置中设置初始访问量，默认为0
 - 使用方法：`VisitorStatistics_Plugin::getVisitorStatistics();`
 - 例如，在相应的php页面下加上`<?php echo VisitorStatistics_Plugin::getVisitorStatistics(); ?>`便可输出访客量，如 `120,622`
-或者，`<?php echo VisitorStatistics_Plugin::getVisitorStatistics('访客量: ',' 次'); ?>`，则输出 `访客量: 120,622 次`
+
+或者为`<?php echo VisitorStatistics_Plugin::getVisitorStatistics('访客量: ',' 次'); ?>`，则输出 `访客量: 120,622 次`
 # 和 Handsome 主题搭配
 - 修改主题页面文件内容:
 修改`/usr/themes/handsome/component/sidebar.php`，找到这块儿代码（博客信息 section）：
