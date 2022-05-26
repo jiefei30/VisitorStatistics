@@ -9,26 +9,7 @@ typecho 博客插件——网站访客量统计
 或者为`<?php echo VisitorStatistics_Plugin::getVisitorStatistics('访客量: ',' 次'); ?>`，则输出 `访客量: 120,622 次`
 # 和 Handsome 主题搭配
 - 修改主题页面文件内容:
-修改`/usr/themes/handsome/component/sidebar.php`，找到这块儿代码（博客信息 section）：
-```html
-<ul class="list-group box-shadow-wrap-normal">
-           <?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?>
-           <li class="list-group-item text-second"><span class="blog-info-icons"> <i data-feather="award"></i></span> <span
-                       class="badge
-           pull-right"><?php $stat->publishedPostsNum() ?></span><?php _me("文章数目") ?></li>
-           <?php if (COMMENT_SYSTEM == 0): ?>
-           <li class="list-group-item text-second"> <span class="blog-info-icons"> <i data-feather="message-circle"></i></span>
-               <span class="badge
-           pull-right"><?php $stat->publishedCommentsNum() ?></span><?php _me("评论数目") ?></li>
-           <?php endif; ?>
-           <li class="list-group-item text-second"><span class="blog-info-icons"> <i data-feather="calendar"></i></span>
-               <span class="badge
-           pull-right"><?php echo Utils::getOpenDays(); ?></span><?php _me("运行天数") ?></li>
-           <li class="list-group-item text-second"><span class="blog-info-icons"> <i data-feather="activity"></i></span> <span
-                       class="badge
-           pull-right"><?php echo Utils::getLatestTime($this); ?></span><?php _me("最后活动") ?></li>
-       </ul>
-```
+修改`/usr/themes/handsome/component/sidebar.php`，找到这`<ul class="list-group box-shadow-wrap-normal">`（博客信息 section）：
 在ul里的末尾加上一个li标签：
 ```html
 <li class="list-group-item text-second"><span class="blog-info-icons"> <i data-feather="users"></i></span> <span
